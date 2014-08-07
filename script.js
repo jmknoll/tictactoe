@@ -1,23 +1,40 @@
 $(document).ready(function(){
 
-//var $board = $('<div class="gameBoard"></div>')
+
 var $gameBox = "<div class='gameBox'></div>"
 
 for (x=0; x<9; x++){
+	//build game board
 	$(".gameBoard").append($gameBox); 
-		//build game board
 		}
 
 var imageCounter = 0
 
-	$('.gameBox').click(function(){
+
+//this is the code for the two-player version
+//comment out with a docstring to run the ai version
+
+$('.gameBox').click(function(){
+
+	if (imageCounter % 2 == 0){
 
 		$(this).css('background-image','url(images/x.png)');
+		imageCounter = imageCounter + 1;
+
+	} else {
+	
+		$(this).css('background-image','url(images/o.png)');
+		imageCounter = imageCounter + 1;
+
+		}
 	});
-// onClick change the color of the box
-// change to an x or an o depending on even/odd of turn counter
-// then build logic for computer's decision making process
-	// start with random
-	// then improve to choices based on where human player went
+
+//this is the code for the ai version
+//comment out with a docstring to run the two-player version
+
+// next steps
+//
+// 1. implement ai version 
+// 2. add a function to play two-player or single-player version
 
 });
